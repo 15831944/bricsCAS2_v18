@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEB68BE2-F6E4-4A94-988D-FE96A472582C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bricsCAS_v18</RootNamespace>
+    <AssemblyName>bricsCAS_v18</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BrxMgd">
+      <HintPath>C:\Program Files\Bricsys\BricsCAD V18 en_US\BrxMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TD_Mgd">
+      <HintPath>C:\Program Files\Bricsys\BricsCAD V18 en_US\TD_Mgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TD_MgdBrep">
+      <HintPath>C:\Program Files\Bricsys\BricsCAD V18 en_US\TD_MgdBrep.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="myCAD\Blöcke.cs" />
+    <Compile Include="myCAD\Layer.cs" />
+    <Compile Include="myCAD\Utilities.cs" />
+    <Compile Include="myCAD\_basicBlocks.cs" />
+    <Compile Include="myFunctions\AboutBox_CAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myFunctions\AboutBox_CAS.designer.cs">
+      <DependentUpon>AboutBox_CAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFunctions\diaPtImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myFunctions\diaPtImport.designer.cs">
+      <DependentUpon>diaPtImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFunctions\diaSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myFunctions\diaSettings.designer.cs">
+      <DependentUpon>diaSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFunctions\PtExport.cs" />
+    <Compile Include="myFunctions\PtImport.cs" />
+    <Compile Include="myFunctions\roundHeight.cs" />
+    <Compile Include="myFunctions\setPoint.cs" />
+    <Compile Include="myUtilities\Global.cs" />
+    <Compile Include="myUtilities\myConfig.cs" />
+    <Compile Include="myUtilities\myRegistry.cs" />
+    <Compile Include="myUtilities\myString.cs" />
+    <Compile Include="myUtilities\progressBar\dlgProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myUtilities\progressBar\dlgProgress.designer.cs">
+      <DependentUpon>dlgProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myUtilities\progressBar\ILongProcessingObject.cs" />
+    <Compile Include="myUtilities\progressBar\MyCadCommands.cs" />
+    <Compile Include="myUtilities\progressBar\MyCadDataHandler.cs" />
+    <Compile Include="myUtilities\progressBar\ProcessingProgressBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="myFunctions\AboutBox_CAS.resx">
+      <DependentUpon>AboutBox_CAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myFunctions\diaPtImport.resx">
+      <DependentUpon>diaPtImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myFunctions\diaSettings.resx">
+      <DependentUpon>diaSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUtilities\progressBar\dlgProgress.resx">
+      <DependentUpon>dlgProgress.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
